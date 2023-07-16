@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hang-Man Game</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Hang-Man Game</h1>
+        <h4>Enter a letter to find the hidden word.</h4>
+      </div>
+      <div class="game">
+        <svg width="140" height="210">
+          <line
+            x1="50"
+            y1="0"
+            x2="50"
+            y2="200"
+            style="stroke: rgb(0, 0, 0); stroke-width: 2"
+          />
+
+          <line
+            x1="0"
+            y1="200"
+            x2="100"
+            y2="200"
+            style="stroke: rgb(0, 0, 0); stroke-width: 2"
+          />
+
+          <line
+            x1="50"
+            y1="0"
+            x2="100"
+            y2="0"
+            style="stroke: rgb(0, 0, 0); stroke-width: 3"
+          />
+
+          <line
+            x1="100"
+            y1="0"
+            x2="100"
+            y2="40"
+            style="stroke: rgb(0, 0, 0); stroke-width: 2"
+          />
+
+          <circle
+            class="human not-displayed dead"
+            cx="100"
+            cy="60"
+            r="20"
+            stroke="black"
+            stroke-width="2"
+            fill="white"
+          />
+
+          <line
+            class="human not-displayed dead"
+            x1="100"
+            y1="80"
+            x2="100"
+            y2="150"
+            style="stroke: rgb(0, 0, 0); stroke-width: 2"
+          />
+
+          <line
+            class="human not-displayed dead"
+            x1="100"
+            y1="80"
+            x2="130"
+            y2="120"
+            style="stroke: rgb(0, 0, 0); stroke-width: 2"
+          />
+
+          <line
+            class="human not-displayed dead"
+            x1="100"
+            y1="80"
+            x2="70"
+            y2="120"
+            style="stroke: rgb(0, 0, 0); stroke-width: 2"
+          />
+
+          <line
+            class="human not-displayed dead"
+            x1="100"
+            y1="150"
+            x2="130"
+            y2="190"
+            style="stroke: rgb(0, 0, 0); stroke-width: 2"
+          />
+
+          <line
+            class="human not-displayed dead"
+            x1="100"
+            y1="150"
+            x2="70"
+            y2="190"
+            style="stroke: rgb(0, 0, 0); stroke-width: 2"
+          />
+        </svg>
+
+        <div class="wrong-letter-container">
+          <h4>Wrong Letter</h4>
+        </div>
+      </div>
+      <div class="word">
+      </div>
+
+      <button class="retry not-displayed">Retry Game</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

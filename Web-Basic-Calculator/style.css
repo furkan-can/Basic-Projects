@@ -1,0 +1,82 @@
+.container {
+  background: lightblue;
+  display: flex;
+  width: 40vh;
+  height: 40vh;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.screen {
+  background: black;
+  color: white;
+  font-size: 1.4rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: right;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.operations {
+  background: white;
+  padding: 0.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid gray;
+}
+
+.operations .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.operations .column .row {
+  font-family: Arial, Helvetica, sans-serif;
+  background: whitesmoke;
+  width: 50px;
+  height: 15%;
+  border: 1px solid gray;
+  z-index: 9999;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: black;
+}
+
+.operations .column .row:not(.equal):not(.ac):hover {
+  border: 1px solid black;
+  background: lightgrey;
+}
+
+.operations .column .row:focus {
+  border: 1px solid black;
+}
+
+.operations .column .equal {
+  color: white;
+  background: royalblue;
+  height: 75%;
+}
+
+.operations .column .ac {
+  color: white;
+
+  background: saddlebrown;
+}
+
+.operations .column .equal:hover {
+  border: 1px solid black;
+}
+
+.operations .column .ac:hover {
+  border: 1px solid black;
+}

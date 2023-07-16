@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Movie Ticket Reservation</title>
+  </head>
+  <body>
+    <div class="container not-displayed">
+      <div class="screen"></div>
+
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+    </div>
+
+    <div class="movie-list">
+      <select id="movie">
+        <option disabled selected value="0">Select Movie</option>
+        <option value="50">Avengers</option>
+        <option value="55">Spiderman</option>
+        <option value="45">Batman</option>
+      </select>
+    </div>
+
+    <p class="text not-displayed">
+      For <span id="count">0</span> seats selected, total price : <span id="total-price">0</span> $
+    </p>
+
+    <div class="info not-displayed">
+      <div class="info-row">
+        <div class="seat small"></div>
+        <small>Empty Seat</small>
+      </div>
+
+      <div class="info-row">
+        <div class="seat selected small"></div>
+        <small>Selected Seat</small>
+      </div>
+
+      <div class="info-row">
+        <div class="seat reserved small"></div>
+        <small>Reserved Seat</small>
+      </div>
+    </div>
+
+    <button id="btn" class="not-displayed">Book Now</button>
+ 
+    <script src="script.js"></script>
+  </body>
+</html>

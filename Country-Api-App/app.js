@@ -4,27 +4,16 @@ document.querySelector("#btnSearch").addEventListener("click", () => {
 });
 
 function getCountry(country) {
-    const request = new XMLHttpRequest();
+    fetch('https://restcountries.com/v3.1/name/' + country)
+        .then((response) => response.json())
+        .then((data) => {
+            renderCountry(data[0]);
+            const countries = data[0].borders.toString();
 
-    request.open('GET', 'https://restcountries.com/v3.1/name/' + country);
-    request.send();
-
-    request.addEventListener('load', function() {
-        const data = JSON.parse(this.responseText);
-        console.log(data);            
-        renderCountry(data[0]);
-
-        const countries = data[0].borders.toString();
-
-        const req = new XMLHttpRequest();
-        req.open('GET', 'https://restcountries.com/v3.1/alpha?codes=' + countries);
-        req.send();
-
-        req.addEventListener('load', function() {
-            const data = JSON.parse(this.responseText);
-            renderNeighbors(data);
-        });
-    });
+            return fetch('https://restcountries.com/v3.1/alpha?codes=' + countries);
+        })
+        .then(response => response.json())
+        .then((data) => renderNeighbors(data));
 }
 
 function renderCountry(data) {        

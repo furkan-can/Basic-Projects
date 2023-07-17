@@ -84,6 +84,14 @@ Music player web app
 <a href="https://furkan-can.github.io/music-player/" >View Demo</a>
 </p>
 
+### 11. Country-API-App
+
+It is the project that shows the information of the searched country and neighboring countries and brings this information using API.
+
+<p align="center">
+<a href="https://furkan-can.github.io/country-api-app/" >View Demo</a>
+</p>
+
 ## Usage
 
 Each project has a separate folder. You can find the project files by going to the respective project folder.

@@ -76,6 +76,14 @@ Simple hangman game
 <a href="https://furkan-can.github.io/hangman-game/" >View Demo</a>
 </p>
 
+### 10. Music-Player
+
+Music player web app
+
+<p align="center">
+<a href="https://furkan-can.github.io/music-player/" >View Demo</a>
+</p>
+
 ## Usage
 
 Each project has a separate folder. You can find the project files by going to the respective project folder.

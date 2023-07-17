@@ -1,32 +1,63 @@
 document.querySelector("#btnSearch").addEventListener("click", () => {
     let text = document.querySelector("#txtSearch").value;
     document.querySelector("#details").style.opacity = 0;
+    document.querySelector("#loading").style.display = "block";
     getCountry(text);
 });
 
-function getCountry(country) {
-    fetch('https://restcountries.com/v3.1/name/' + country)
-        .then((response) => {
-            if(!response.ok)
-                throw new Error("Not found country.");
-            return response.json()
-        })
-        .then((data) => {
-            renderCountry(data[0]);
-            const countries = data[0].borders;
+document.querySelector("#btnLocation").addEventListener("click", () => {
+    if(navigator.geolocation) {
+        document.querySelector("#loading").style.display = "block";
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
+});
 
-            if(!countries) 
-                throw new Error("Not found neighboring countries");
-        
-
-            return fetch('https://restcountries.com/v3.1/alpha?codes=' + countries.toString());
-        })
-        .then(response => response.json())
-        .then((data) => renderNeighbors(data))
-        .catch(err => renderError(err));
+function onError(err) {
+    console.log(err);
+    document.querySelector("#loading").style.display = "none";
 }
 
-function renderCountry(data) {        
+async function onSuccess(position) {
+    let lat = position.coords.latitude;
+    let lng = position.coords.longitude;
+
+    // api, google, opencagedata
+    const api_key = "bc3bdf6d36c84295b305cc2822a45dd1";
+    const url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=${api_key}`;
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    const country = data.results[0].components.country;
+
+    document.querySelector("#txtSearch").value = country;
+    document.querySelector("#btnSearch").click();        
+}
+
+async function getCountry(country) {
+    try {
+        const response = await fetch('https://restcountries.com/v3.1/name/' + country);
+        if(!response.ok)
+            throw new Error("Not found country");
+        const data = await response.json();
+        renderCountry(data[0]);
+
+        const countries = data[0].borders;
+        if(!countries) 
+            throw new Error("Not found neighboring countries");
+
+        const response2 = await fetch('https://restcountries.com/v3.1/alpha?codes=' + countries.toString());
+        const neighbors = await response2.json();
+
+        renderNeighbors(neighbors);
+    }
+    catch(err) {
+        renderError(err);
+    }
+}
+
+function renderCountry(data) {     
+    document.querySelector("#loading").style.display = "none";
     document.querySelector("#country-details").innerHTML = "";
     document.querySelector("#neighbors").innerHTML = "";
    
@@ -80,6 +111,7 @@ function renderNeighbors(data) {
 }
 
 function renderError(err) {
+    document.querySelector("#loading").style.display = "none";
     const html = `
         <div class="alert alert-danger">
             ${err.message}

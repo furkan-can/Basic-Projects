@@ -92,6 +92,14 @@ It is the project that shows the information of the searched country and neighbo
 <a href="https://furkan-can.github.io/country-api-app/" >View Demo</a>
 </p>
 
+### 12. Currency-Exchange-Api-App
+
+Web page for converting specified exchange rates using API
+
+<p align="center">
+<a href="https://furkan-can.github.io/currency-exchange-api-app/" >View Demo</a>
+</p>
+
 ## Usage
 
 Each project has a separate folder. You can find the project files by going to the respective project folder.

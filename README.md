@@ -100,6 +100,16 @@ Web page for converting specified exchange rates using API
 <a href="https://furkan-can.github.io/currency-exchange-api-app/" >View Demo</a>
 </p>
 
+### 13. Translate-Api-App
+
+A web page with functions such as sentence translation and voice over using various API services.
+
+<p align="center">
+<a href="https://furkan-can.github.io/translate-api-app/" >View Demo</a>
+</p>
+
+
+
 ## Usage
 
 Each project has a separate folder. You can find the project files by going to the respective project folder.

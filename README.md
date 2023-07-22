@@ -116,6 +116,14 @@ It is a web page where we can list the profile information received from the API
 <a href="https://furkan-can.github.io/profile-finder-api-app/" >View Demo</a>
 </p>
 
+### 15. OEM-Calculator
+
+CRUD operations with Shopping Cart List and using Localstorage
+
+<p align="center">
+<a href="https://furkan-can.github.io/oem-calculator/" >View Demo</a>
+</p>
+
 ## Usage
 
 Each project has a separate folder. You can find the project files by going to the respective project folder.
